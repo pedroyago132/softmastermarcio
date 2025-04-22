@@ -104,7 +104,7 @@ const Home = () => {
                         <FormControl color='primary'  >
                             <Logo src='/softlogo.png' alt='id' />
                             <Title>
-                               Sistema Web de Márcio
+                               Sistema Web de Márcio Vinicius
                             </Title>
                             <TextField
                                 id="outlined-multiline-flexible"

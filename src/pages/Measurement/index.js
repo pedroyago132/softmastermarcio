@@ -615,8 +615,25 @@ transition: transform 0.3s;
             sendMessageAll(body)
             handleCloseList()
         }
-
     }
+
+    const handleDateChange = (e) => {
+        const value = e.target.value;
+    
+        // Permitir apenas números e "/"
+        if (/^[0-9/]*$/.test(value)) {
+          // Aplicar a máscara "dd/mm"
+          let cleaned = value.replace(/\D/g, '');
+          if (cleaned.length > 4) cleaned = cleaned.slice(0, 4);
+    
+          let formatted = cleaned;
+          if (cleaned.length >= 3) {
+            formatted = `${cleaned.slice(0, 2)}/${cleaned.slice(2)}`;
+          }
+    
+          setDateManual(formatted);
+        }
+      };
 
 
 
@@ -1536,7 +1553,7 @@ transition: transform 0.3s;
                         Data Formato: - Ex:. 16/04:
                     </Typography>
 
-                    <TextField id="outlined-basic-cpf" style={{ marginTop: 15 }} value={dateManual} label="Insira uma data Ex:.DD/MM...." onChange={text => setDateManual(text.target.value)} placeholder='Mensagem' fullWidth variant="outlined" />
+                    <TextField id="outlined-basic-cpf" style={{ marginTop: 15 }} value={dateManual} label="Insira uma data Ex:.DD/MM...." onChange={handleDateChange} placeholder='Mensagem' fullWidth variant="outlined" />
 
 
                     <Typography id="modal-modal-title" variant="h5" style={{ fontWeight: '500', marginTop: 10, fontSize: 16 }} >
