@@ -443,7 +443,7 @@ transition: transform 0.3s;
 
 
     const data = [
-        { title: "Agendamentos Hoje", value: relatorio ? relatorio.clientes : 0, percentage: "+0%" },
+        { title: "Agendamentos", value: relatorio ? relatorio.clientes : 0, percentage: "+0%" },
         { title: "Agendamentos atendidos", value: relatorio.clientesAtendidos ? relatorio.clientesAtendidos : 0, percentage: "+0%" },
         { title: "Valor Agendado", value: `R$ ${relatorio.valorEmClientes ? relatorio.valorEmClientes.toFixed(2).replace('.', ',') : 0}`, percentage: "+0%" },
 
