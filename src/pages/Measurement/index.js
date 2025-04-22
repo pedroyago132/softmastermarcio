@@ -1361,7 +1361,7 @@ transition: transform 0.3s;
                     </ContainerRules>
                     <div style={{ display: 'flex', flexDirection: 'column', width: '95%' }} >
 
-                        <Typography style={{ fontWeight: 'bold', color: 'black', fontSize: '22px', alignSelf: 'flex-start' }} >Agendamentos</Typography>
+                        <Typography style={{ fontWeight: 'bold', color: 'black', fontSize: '22px', alignSelf: 'flex-start' }} >Agendamentos Hoje</Typography>
                         <InputText placeholder='Pesquisar...' value={filterValue} onChange={e => handleFilterChange(e)} />
                         <Paper sx={{ height: 400, width: '100%', alignSelf: 'flex-start' }}>
                             <DataGrid
