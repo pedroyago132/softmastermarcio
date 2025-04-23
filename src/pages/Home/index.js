@@ -115,6 +115,7 @@ const Home = () => {
                                 variant='outlined'
                                 placeholder='Insira seu Email'
                                 onChange={text => setEmailInput(text.target.value)}
+                                style={{border: '1px solid grey',color:"black"}}
                             />
 
                             <TextField
@@ -126,6 +127,7 @@ const Home = () => {
                                 variant='outlined'
                                 placeholder='Senha'
                                 onChange={text => setSenha(text.target.value)}
+                                style={{border: '1px solid grey',color:"black"}}
 
                             />
                             <Button style={{ alignSelf: 'center' }} onClick={() => goMeansure()} variant="contained">Entrar</Button>
