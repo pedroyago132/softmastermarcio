@@ -225,7 +225,7 @@ const Measurement = () => {
 
 
     const Card = styled.div`
-  background-color: #414706;
+  background-color: #3c55e9;
   color: white;
   padding: 20px;
   border-radius: 10px;
@@ -754,6 +754,36 @@ transition: transform 0.3s;
 
                 setMessageDataUser(result)
                 setUserMessage(result.text.message)
+            } catch (error) {
+                console.error('Erro ao buscar dados:', error);
+            }
+        };
+
+
+
+        const interval = setInterval(() => {
+            atualizar();
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    React.useEffect(() => {
+        const atualizar = async () => {
+            try {
+                const response = await fetch('https://backendpedro.vercel.app/dadosStatus', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+                if (!response.ok) {
+                    throw new Error(`Erro: ${response.status} - ${response.statusText}`);
+                }
+
+                const result = await response.json();
+
+               console.log('CELULAR STATUS CONECTADO:::::::::::',result)
             } catch (error) {
                 console.error('Erro ao buscar dados:', error);
             }
